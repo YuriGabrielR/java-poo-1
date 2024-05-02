@@ -1,6 +1,6 @@
 public class Contato {
     private String nome;
-    private String endereco;
+    private Endereco endereco;
     private String telefone;
     public String getNome() {
         return nome;
@@ -10,16 +10,16 @@ public class Contato {
         this.nome = nome;
     }
 
-    public String getEndereco() {
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(String endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
-    }
-
-    public String getTelefone() {
-        return telefone;
     }
 
     public void setTelefone(String telefone) {
