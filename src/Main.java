@@ -3,8 +3,22 @@ public class Main {
 
         Contato contato = new Contato();
         contato.setNome("Yuri Ramos");
-        // contato.setEndereco();
-        contato.setTelefone("12981946294");
+
+        Telefone tel = new Telefone();
+        tel.setTipo("celular");
+        tel.setDdd("12");
+        tel.setNumero("98218645");
+
+        Telefone tel2 = new Telefone();
+        tel2.setTipo("fixo");
+        tel2.setDdd("13");
+        tel2.setNumero("98218647");
+
+       Telefone[] telefones = new Telefone[2];
+       telefones[0] = tel;
+       telefones[1] = tel2;
+
+        contato.setTelefones(telefones);
 
         Endereco end = new Endereco();
         end.setNomeRua("Rua Palestra");
@@ -17,11 +31,15 @@ public class Main {
         contato.setEndereco(end);
 
         System.out.println(contato.getNome());
-        System.out.println(contato.getTelefone());
 
-        if( contato != null && contato.getEndereco() != null){
+        if( contato.getEndereco() != null){
             System.out.println(contato.getEndereco().getCidade());
         }
 
+        if( contato.getTelefones() != null ){
+            for (Telefone t: contato.getTelefones()){
+                System.out.println(t.getDdd() + " " + t.getNumero());
+            }
+        }
     }
 }
